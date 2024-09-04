@@ -1,0 +1,43 @@
+const whatsnew=[
+{
+    id:1,
+    newslink:"News-1"
+},
+{
+    id:2,
+    newslink:"News-2"
+},
+{
+    id:3,
+    newslink:"News-3"
+},
+{
+    id:4,
+    newslink:"News-4"
+},
+{
+    id:5,
+    newslink:"News-5"
+},
+{
+    id:6,
+    newslink:"News-6"
+},
+{
+    id:7,
+    newslink:"News-7"
+},
+{
+    id:8,
+    newslink:"News-8"
+},
+{
+    id:9,
+    newslink:"News-9"
+},
+{
+    id:10,
+    newslink:"News-10"
+},
+]
+export default whatsnew;
