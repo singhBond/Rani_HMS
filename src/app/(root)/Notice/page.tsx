@@ -24,19 +24,15 @@ import Whatsnew from "@/json/whatsNew";
 import Title from "@/components/Title";
 const page = () => {
   return (
-    <section className="px-4 py-4 ">
+    <section className="px-4 py-4  grid justify-self-center">
       {/* NOTICE SECTION */}
 
       <Title title={"Notice"} />
-      <div className=" grid grid-cols-2 gap-4 mx-auto items-center">
-        <Card className="">
+      <div className=" grid grid-cols-2 gap-4 mx-auto items-center ">
+        
+        <Card className="w-96">
           <CardHeader className="flex flex-row items-center">
-            <div className="grid gap-2">
-              <CardTitle>What's New</CardTitle>
-              {/* <CardDescription>
-                Recent transactions from your store.
-              </CardDescription> */}
-            </div>
+            <CardTitle>What's New</CardTitle>
           </CardHeader>
           <ScrollArea className="h-48">
             <CardContent>
@@ -44,21 +40,23 @@ const page = () => {
                 <TableHeader>
                   <TableRow>
                     <TableHead>News Link</TableHead>
-                    <TableHead className=" ">PDF file</TableHead>
+                    
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {Whatsnew.map((news) => (
                     <TableRow key={news.id}>
-                      <Link href="#">
-                        {" "}
-                        <TableCell>
-                          <div className="font-medium hover:text-sky-700">
-                            {news.newslink}
-                          </div>
-                        </TableCell>
-                      </Link>
-                      <TableCell className="">.pdf</TableCell>
+                      <TableCell>
+                        <Link
+                          href={news.newslink}
+                          className="font-medium hover:text-sky-700"
+                          target="_blank" 
+                        >
+                          News
+                        </Link>
+                      </TableCell>
+
+                     
                     </TableRow>
                   ))}
                 </TableBody>
@@ -67,45 +65,41 @@ const page = () => {
           </ScrollArea>
         </Card>
 
-        <Card className="">
-          <CardHeader className="flex flex-row items-center">
-            <div className="grid gap-2">
-              <CardTitle>What's New</CardTitle>
-              {/* <CardDescription>
-                Recent transactions from your store.
-              </CardDescription> */}
-            </div>
-          </CardHeader>
-          <ScrollArea className="h-48">
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>News Link</TableHead>
-                    <TableHead className=" ">PDF file</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {Whatsnew.map((news) => (
-                    <TableRow key={news.id}>
-                      <Link href="#">
-                        {" "}
-                        <TableCell>
-                          <div className="font-medium hover:text-sky-700">
-                            {news.newslink}
-                          </div>
-                        </TableCell>
-                      </Link>
-                      <TableCell className="">.pdf</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </ScrollArea>
-        </Card>
+        <Card className="w-full md:w-96">
+  <CardHeader className="flex flex-row items-center">
+    <CardTitle>Forms</CardTitle>
+  </CardHeader>
+  {/* Scrollable content */}
+  <ScrollArea className="h-48 overflow-auto">
+    <CardContent>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>New</TableHead>
+            <TableHead>PDF file</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {Whatsnew.map((news) => (
+            <TableRow key={news.id}>
+              <TableCell>
+                {/* <Link href="#" className="font-medium hover:text-sky-700">
+                  {news.newslink}
+                </Link> */}
+                 form
+              </TableCell>
+              <TableCell> <a href={news.newslink} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+             PDF
+          </a></TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </CardContent>
+  </ScrollArea>
+</Card>
+
       </div>
-
     </section>
   );
 };

@@ -1,43 +1,43 @@
 const whatsnew=[
 {
     id:1,
-    newslink:"News-1"
+    newslink:"https://example.com/pdfs/healthcare-report-2023.pdf"
 },
 {
     id:2,
-    newslink:"News-2"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:3,
-    newslink:"News-3"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:4,
-    newslink:"News-4"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:5,
-    newslink:"News-5"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:6,
-    newslink:"News-6"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:7,
-    newslink:"News-7"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:8,
-    newslink:"News-8"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:9,
-    newslink:"News-9"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 {
     id:10,
-    newslink:"News-10"
+    newslink:"https://example.com/pdfs/mental-health-awareness-guide.pdf"
 },
 ]
 export default whatsnew;

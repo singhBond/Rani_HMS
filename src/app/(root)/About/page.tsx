@@ -1,193 +1,218 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Computer, HeartPulse, HousePlus, Stethoscope } from "lucide-react";
-import React from "react";
+"use client";
+import * as React from "react";
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Title from "@/components/Title";
 
-const page = () => {
+const Page = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const autoPlayInterval = 3000; // Autoplay interval for carousel
+
+  const images = [{ url: "/sliderImage/2.png" }, { url: "/sliderImage/5.png" }];
+  const itemLength = images.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === itemLength - 1 ? 0 : prevIndex + 1
+      );
+    }, autoPlayInterval);
+
+    return () => clearInterval(interval); // Clean up on unmount
+  }, [itemLength]);
+
+  const handlePrevious = () => {
+    setActiveIndex(activeIndex === 0 ? itemLength - 1 : activeIndex - 1);
+  };
+
+  const handleNext = () => {
+    setActiveIndex(activeIndex === itemLength - 1 ? 0 : activeIndex + 1);
+  };
+
   return (
-    <div>
-      <h1 className="bg-sky-700 grid justify-center text-3xl text-white w-full">
-        Emergency No.(24x7) : 7677111010
-      </h1>
-      <h2 className="text-sky-700 text-4xl mt-8 text-center ">About Us</h2>
-      {/* Medical Pictres */}
-      <div className="grid grid-cols-2 sm:w-full sm:h-full lg:w-full lg:h-full ">
-        <div className=" grid justify-center items-center  text-xl  ">
-          <ul className="space-y-4 text-center text-sky-700 ">
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              Ambulance Service
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              7677111010, 0651-2360430/
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              Centre of Excellence in Children's Health Care
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              Neonatology, Paediatrics
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              Interstate Ambilance Services
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              HHFO, CPAP
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              All Neonatal Procedures
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              Screening of Newborns
-            </li>
-            <li className="border-l-8 border-b-2 border-sky-700 shadow-2xl shadow-sky-700 rounded-full bg-sky-200 ">
-              All tpye of Paediatric Surgery
-            </li>
-          </ul>
+    <section>
+      <Title title={"About Us"} />
+      <div className="bg-sky-50 py-4 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Carousel Section */}
+        <div className="relative p-4 flex justify-center items-center">
+          <Carousel className="w-full max-w-md lg:max-w-lg">
+            <h1 className="bg-sky-700 text-2xl text-white font-serif text-center py-2">
+              Gallery
+            </h1>
+            <CarouselContent
+              style={{
+                transform: `translateX(-${activeIndex * 100}%)`,
+                transition: "transform 0.5s ease-in-out",
+              }}
+            >
+              {images.map((image, index) => (
+                <CarouselItem key={index} className="min-w-full">
+                  <Card className="shadow-lg">
+                    <CardContent className="flex items-center justify-center p-0">
+                      <img
+                        src={image.url}
+                        alt={`Slide ${index + 1}`}
+                        className="w-full h-64 object-cover"
+                      />
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious onClick={handlePrevious} />
+            <CarouselNext onClick={handleNext} />
+          </Carousel>
         </div>
-        {/* About Area */}
-        <div className="p-8">
-          <h3 className="text-slate-800 text-2xl font-medium m-2">
-            Our mission is to be a centre of excellence for neonatal and
-            paediatric health care in India.
-          </h3>
-          <img src="/Logo/hmsLogo.png" alt="icon" className="mx-4" />
-          <p className="text-slate-600 m-2">
-            Rani Hospital has grown overtime by extending child healthcare
-            specialization in a medically underdeveloped state like Jharkhand.
-            Excellence in the healthcare services has made us a reputation of
-            Regional Tertiary Health Centre for newborn and children in the
-            region. We have a very large share of patients from nearby states.
-            Rani Hospital is a 225 bedded super speciality children hospital
-            situated in the capital of Jharkhand. We have the honour of being
-            the largest treatment facility for sick children in private sector
-            in India.
+
+        {/* About Section */}
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 flex flex-col justify-center font-serif text-lg p-8">
+          <p>
+            We are a center of excellence in children’s healthcare. The idea of
+            setting up a good hospital for children was born over four decades
+            ago when our medical director was still studying in kinder gardens
+            at Daltonganj. His Nanaji (Maternal grandfather) was the head clerk
+            in district hospital Palamu at Daltonganj. Currently this hospital
+            is run by a non-profit charitable organization; “Dukhharan Memorial
+            Charitable Trust”. This trust has been formed in the memory of our
+            medical director’s Nanaji (Late Sri Dukhharan Prasad Sinha). Our
+            team started a children’s hospital in rented premises in year 2004
+            (Rani Children Hospital, Karamtoli, Ranchi). This modern Children’s
+            Hospital (Rani Hospital) was started in year 2010. Till year 2015
+            theses two hospitals were run by a private limited company. The
+            assets related to the hospitals were donated to the trust in year
+            2015. Since then these hospital are run by the trust.
           </p>
-          <p className="text-slate-600 m-2">
-            We are in the 18th year of glorious excellence in child care. Our
+        </div>
+      </div>
+
+      {/* Additional Information */}
+      <div className="bg-sky-50 py-8 px-4 md:px-12 font-serif text-lg  ">
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+          <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
+          <p>
+            We are in the 20th year of glorious excellence in child care. Our
             founder Hon. Dr. Rajesh took courageous decision to start a state of
             the art facility for children healthcare in the region. Rani
             hospital has come a long way in tertiary child care not only in the
             state of Jharkhand but in the whole eastern part of the country.
             There are many medical facilities, which are not available elsewhere
-            in this region. Rani hospital is 225+ bed multi-speciality health
+            in the region. Rani hospital is 225+ bed multi-speciality health
             centres for Paediatrics with Doctors having decades of experience in
-            handling critical cases.
+            handling critical cases. [List some awards and Recognitions also]
           </p>
-          <p className="text-slate-600 m-2 ">
-            We are an ethical, transparent group and follow purely ‘evidence
-            based medicine’. Still our charges are almost equivalent to the
-            charges prescribed by the government (CGHS rates for Ranchi). We
-            caters for all the strata our society; low income families to the
-            middle and upper income families. Currently we are mainly involved
-            in the care of sick children. Soon we will be starting the services
-            for the women also. For us the care of children will be the first
-            priority.
+        </div>
+
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+          <h2 className="text-2xl font-bold mb-4">Quality Policy</h2>
+          <p>
+            We are committed to meet and exceed the requirements and
+            expectations of our individual and corporate patients by providing
+            coordinated, compassionate and high-quality healthcare services.
           </p>
-          <div className="grid grid-flow-col m-2 ">
-            <Button className="bg-sky-700 rounded-md h-12 w-36  mt-4 ">
-              More About
-            </Button>
+        </div>
+
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+          <h2 className="text-2xl font-bold mb-4">
+            how the dream become reality
+          </h2>
+          <p>
+            The idea of setting up a good hospital for children was born over
+            four decades ago when our medical director was still studying in
+            kinder gardens at Daltonganj. His Nanaji (Maternal grandfather) was
+            the head clerk in district hospital Palamu at Daltonganj. Currently
+            this hospital is run by a non-profit charitable organization;
+            “Dukhharan Memorial Charitable Trust”. This trust has been formed in
+            the memory of our medical director’s Nanaji (Late Sri Dukhharan
+            Prasad Sinha). Our team started a children’s hospital in rented
+            premises in year 2004 (Rani Children Hospital, Karamtoli, Ranchi).
+            This modern Children’s Hospital (Rani Hospital) was started in year
+            2010. Till year 2015 theses two hospitals were run by a private
+            limited company. The assets related to the hospitals were donated to
+            the trust in year 2015. Since then these hospital are run by the
+            trust.
+          </p>
+        </div>
+        <div className="flex justify-center gap-6">
+          <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+            <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+            <p>
+              Our mission is to be a centre of excellence for neonatal and
+              paediatric health care in India.
+            </p>
           </div>
+          <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+            <p>
+              Our Vision is to provide highest standard of care at affordable
+              cost.
+            </p>
+          </div>
+        </div>
+        
+
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8 mb-4">
+          <h2 className="text-2xl font-bold mb-4">Our Values</h2>
+          <ul className="list-disc pl-6">
+            <li>
+              We maintain the highest standards and achieve them by continually
+              measuring and improving our outcomes.
+            </li>
+            <li>
+              We welcome change, encourage invention and continually seek
+              better, more efficient ways to achieve our goals.
+            </li>
+            <li>
+              We collaborate and share knowledge to benefit patients and fellow
+              caregivers for the advancement of our mission.
+            </li>
+            <li>
+              We strive to exceed our patients' expectations for comfort and
+              convenience.
+            </li>
+            <li>
+              We adhere to high moral principles and professional standards by a
+              commitment to honesty, confidentiality, trust, respect and
+              transparency.
+            </li>
+            <li>
+              We demonstrate our commitment to world-class care by providing a
+              caring and supportive environment for our patients, patients'
+              families and fellow caregivers.
+            </li>
+          </ul>
+        </div>
+
+        <div className="shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-8">
+          <h2 className="text-2xl font-bold mb-4">What we do</h2>
+          <p>
+            We have a complete range of child healthcare services from critical
+            care to preventive care. Most babies admitted to the NICU are
+            premature (born before 37 weeks of pregnancy), have low birth weight
+            (less than 2.5 Kgs), have a medical condition that requires special
+            care or any other life threatening condition. Twins, triplets, and
+            other multiples often are admitted to the NICU, as they tend to be
+            born earlier and smaller than single birth babies. Babies with
+            medical conditions such as heart problems, infections, or birth
+            defects are also cared for in the NICU.
+            <p>
+              Care of illness supported by our multi disciplinary specialty
+              services including General Paediatrics, Neonatology, Nephrology,
+              Neurology, Gastroenterology, Haematology, Oncology, Cardiology,
+              Genetic and Metabolic Diseases, Paediatric Dentistry and
+              Nutrition.
+            </p>
+          </p>
         </div>
       </div>
-      {/* Facility Info Cards */}
-      <div className="grid grid-flow-col md:w-full md:h-full justify-center py-4 gap-8 ">
-        <Card className="  transition ease-in-out delay-150 bg-sky-50   hover:-translate-y-1 hover:scale-110 hover:bg-white duration-300 ...  shadow-none border-none md:max-w-72 md:max-h-48 text-wrap  flex flex-col items-center hover:shadow-lg hover:shadow-sky-500  ">
-          <img src="" alt="Medical Director" className="size-16 rounded-full bg-white" />
-
-          <div className="grid grid-flow-row text-center text-wrap gap-2 m-2">
-            <h1 className="text-lg font-medium">Name</h1>
-            <p className="text-sm font-extralight  text-slate-800 ">
-             Qalification
-            </p>
-            <p className="text-sm font-extralight  text-slate-800 ">"Quote"</p>
-          </div>
-        </Card>
-        <Card className="  transition ease-in-out delay-150 bg-sky-50   hover:-translate-y-1 hover:scale-110 hover:bg-white duration-300 ...  shadow-none border-none md:max-w-72 md:max-h-48 text-wrap  flex flex-col items-center hover:shadow-lg hover:shadow-sky-500  ">
-          <img src="" alt="Administrative Director" className="size-16 rounded-full bg-white" />
-
-          <div className="grid grid-flow-row text-center text-wrap gap-2 m-2">
-            <h1 className="text-lg font-medium">Name</h1>
-            <p className="text-sm font-extralight  text-slate-800 ">
-             Qalification
-            </p>
-            <p className="text-sm font-extralight  text-slate-800 ">"Quote"</p>
-          </div>
-        </Card>
-
-        {/* <div>
-          <a
-            href="#"
-            className="transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 duration-300  ... group block max-w-xs mx-auto rounded-lg p-8 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-600  hover:shadow-2xl hover:shadow-sky-600  "
-          >
-            <div className="flex items-center space-x-3">
-              <HousePlus
-                size={56}
-                color="#0284c7"
-                strokeWidth={1.5}
-                className=" group-hover:stroke-white"
-              />
-
-              <h3 className="text-slate-900 group-hover:text-white text-lg font-semibold">
-                Quality & Safety
-              </h3>
-            </div>
-            <p className="text-slate-500 group-hover:text-white text-sm">
-              Our Delmont hospital utilizes state of the art technology and
-              employs a team of true experts.
-            </p>
-          </a>
-        </div>
-
-        <div>
-          <a
-            href="#"
-            className="transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 duration-300 ... group block max-w-xs mx-auto rounded-lg p-8 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-600 hover:ring-sky-600 hover:shadow-2xl hover:shadow-sky-600 "
-          >
-            <div className="flex items-center space-x-3">
-              <Computer
-                size={56}
-                color="#0284c7"
-                strokeWidth={1.5}
-                className=" group-hover:stroke-white"
-              />
-
-              <h3 className="text-slate-900 group-hover:text-white text-lg font-semibold">
-                Leading Technology
-              </h3>
-            </div>
-            <p className="text-slate-500 group-hover:text-white text-sm">
-              Our Delmont hospital utilizes state of the art technology and
-              employs a team of true experts.
-            </p>
-          </a>
-        </div>
-
-        <div>
-          <a
-            href="#"
-            className="transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 duration-300 ... group block max-w-xs mx-auto rounded-lg p-8 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-600 hover:ring-sky-600 hover:shadow-2xl hover:shadow-sky-600 "
-          >
-            <div className="flex items-center space-x-3">
-              <Stethoscope
-                size={56}
-                color="#0284c7"
-                strokeWidth={1.5}
-                className=" group-hover:stroke-white"
-              />
-
-              <h3 className="text-slate-900 group-hover:text-white text-lg font-semibold">
-                Experts by Exprience
-              </h3>
-            </div>
-            <p className="text-slate-500 group-hover:text-white text-sm">
-              Our Delmont hospital utilizes state of the art technology and
-              employs a team of true experts.
-            </p>
-          </a>
-        </div> */}
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default page;
+export default Page;

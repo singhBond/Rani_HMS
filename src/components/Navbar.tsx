@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Search } from "lucide-react";
 
 export function NavbarDemo() {
   return (
@@ -22,29 +25,27 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        " top-0 inset-x-0 z-50 transition-transform transform",className)}
+        " top-0 inset-x-0 z-50 transition-transform transform ",className)}
     >
-      <Menu setActive={setActive} > 
-        <HoveredLink href="/">HOME</HoveredLink>
+      <Menu setActive={setActive}  > 
+        <Link href="/" className="text-white text-sm hover:text-slate-200">HOME</Link>
+        <Link href="/About" className="text-white text-sm hover:text-slate-200">ABOUT US</Link>
 
-        <MenuItem setActive={setActive} active={active} item="ABOUT US">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-           
-          </div>
-        </MenuItem>
+        
 
         <MenuItem setActive={setActive} active={active} item="DEPARTMENTS">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
+            <HoveredLink href="/Department/speciality">Specialtiy Centre </HoveredLink>
+            <HoveredLink href="/Department/department">Departments</HoveredLink>
+            <HoveredLink href="/Department/superspeciality">Superspeciality </HoveredLink>
            
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="APPOINTMENTS">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Specialtiy </HoveredLink>
-            <HoveredLink href="/individual">OPD Schedule</HoveredLink>
+            <HoveredLink href="/hobby"> OPD Appointment Booking</HoveredLink>
+            <HoveredLink href="/individual">Book Telecommunication Appointment</HoveredLink>
+            <HoveredLink href="/individual">Video Conferencing</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="EVENTS">
@@ -66,7 +67,7 @@ function Navbar({ className }: { className?: string }) {
           </div>
           
         </MenuItem>
-        <HoveredLink href="/hobby">CONTACT US</HoveredLink>
+        <Link href="/hobby" className="text-white text-sm hover:text-slate-200">CONTACT US</Link>
         <MenuItem setActive={setActive} active={active} item="CAREER">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
@@ -78,11 +79,17 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             
           </div>
+          
+          
         </MenuItem>
 
 
-        
+        <Link href="/blogDash/blog" className="text-white text-sm hover:text-slate-200">BLOG</Link>
 
+        <div className="grid relative w-48 bottom-2 max-w-sm h-0 ">
+      <Input type="text" placeholder="Search" className="absolute  " />
+      <Button type="submit" className="bg-white justify-self-end "><Search size={20} color="#086fdd "  /></Button>
+    </div>
         
       </Menu>
     </div>

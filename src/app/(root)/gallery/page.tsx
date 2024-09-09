@@ -27,7 +27,7 @@ const carouselItems = [
     <Carousel className="w-full">
       <CarouselContent className="flex space-x-2">
         {carouselItems.map(({ id, image, title, link }) => (
-          <CarouselItem key={id} className="w-1/6 flex-shrink-0">
+          <CarouselItem key={id} className="w-3/6 flex-shrink-0">
             <a href={link} target="_blank" rel="noopener noreferrer">
               <div className="p-2">
                 <Card className="w- h-full">
