@@ -58,8 +58,8 @@ export function GalleryAuto() {
   };
 
   return (
-    <section className="grid justify-center">
-      <Carousel className="sm:w-96  lg:w-[1400px] max-w-full  shadow-inner shadow-sky-700 bg-sky-100 ">
+    <section className="grid justify-center px-10">
+      <Carousel className=" grid sm:w-1/3    lg:w-[1400px] max-w-full  shadow-inner shadow-sky-700 bg-sky-100 ">
         <CarouselContent
           className=" flex transition-transform ease-in-out duration-1000"
           style={{ transform: `translateX(-${currentIndex * 25}%)` }}
@@ -67,7 +67,7 @@ export function GalleryAuto() {
           {galleryimage.map((index) => (
             <CarouselItem
               key={index.id}
-              className=" md:basis-1/3 lg:basis-1/4  "
+              className=" md:basis-1/3 lg:basis-1/4    "
             >
               <div className="p-1">
                 <Card className="h-64 w-64 sm:28  ">

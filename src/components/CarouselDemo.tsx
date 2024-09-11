@@ -55,36 +55,80 @@ export function CarouselDemo({ userImages = [] }: CarouselDemoProps) {
   };
 
   return (
-    <div className="w-full max-w-full relative">
-      <Carousel
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+    // <section>
+    // <div className="w-full max-w-full relative">
+    //   <Carousel
+    //     onMouseEnter={handleMouseEnter}
+    //     onMouseLeave={handleMouseLeave}
+    //   >
+    //     <CarouselContent
+    //       style={{
+    //         transform: `translateX(-${activeIndex * 100}%)`,
+    //         transition: "transform 0.8s ease-in-out",
+    //       }}
+    //     >
+    //       {images.map((image, index) => (
+    //         <CarouselItem key={index} className="min-w-full">
+    //           <div className="p-1">
+    //             <Card className="rounded-lg shadow-lg overflow-hidden">
+    //               <CardContent className="flex items-center justify-center p-0">
+    //                 <img
+    //                   src={image.url}
+    //                   alt={`Slide ${index + 1}`}
+    //                   className="w-full h-[450px] object-fill transition-transform duration-700 ease-in-out transform hover:scale-105"
+    //                 />
+    //               </CardContent>
+    //             </Card>
+    //           </div>
+    //         </CarouselItem>
+    //       ))}
+    //     </CarouselContent>
+    //     <CarouselPrevious onClick={handlePrevious} />
+    //     <CarouselNext onClick={handleNext} />
+    //   </Carousel>
+    // </div>
+    // </section>
+    <section>
+  <div className="w-full max-w-full relative">
+    <Carousel
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <CarouselContent
+        style={{
+          transform: `translateX(-${activeIndex * 100}%)`,
+          transition: "transform 0.8s ease-in-out",
+        }}
       >
-        <CarouselContent
-          style={{
-            transform: `translateX(-${activeIndex * 100}%)`,
-            transition: "transform 0.8s ease-in-out",
-          }}
-        >
-          {images.map((image, index) => (
-            <CarouselItem key={index} className="min-w-full">
-              <div className="p-1">
-                <Card className="rounded-lg shadow-lg overflow-hidden">
-                  <CardContent className="flex items-center justify-center p-0">
-                    <img
-                      src={image.url}
-                      alt={`Slide ${index + 1}`}
-                      className="w-full h-[450px] object-fill transition-transform duration-700 ease-in-out transform hover:scale-105"
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious onClick={handlePrevious} />
-        <CarouselNext onClick={handleNext} />
-      </Carousel>
-    </div>
+        {images.map((image, index) => (
+          <CarouselItem key={index} className="min-w-full">
+            <div className="p-2">
+              <Card className="rounded-lg shadow-lg overflow-hidden">
+                <CardContent className="flex items-center justify-center p-0">
+                  <img
+                    src={image.url}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      
+      {/* Carousel Navigation */}
+      <CarouselPrevious
+        onClick={handlePrevious}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white bg-sky-700 p-2 rounded-full hover:bg-sky-600 transition"
+      />
+      <CarouselNext
+        onClick={handleNext}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white bg-sky-700 p-2 rounded-full hover:bg-sky-600 transition"
+      />
+    </Carousel>
+  </div>
+</section>
+
   );
 }
