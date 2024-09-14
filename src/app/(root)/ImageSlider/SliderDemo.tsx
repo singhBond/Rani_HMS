@@ -12,7 +12,7 @@ const Slider = () => {
     { url: "/sliderImage/2.png" },
     { url: "/sliderImage/5.png" },
     { url: "/sliderImage/award.png" },
-    { url: "/sliderImage/buildingcopy1.png" },
+    // { url: "/sliderImage/buildingcopy1.png" },
     { url: "/sliderImage/accreditations1.png" },
     { url: "/sliderImage/slidedoctor.png" },
   ]);
@@ -21,10 +21,12 @@ const Slider = () => {
     setSliderImages(updatedImages);
   };
   return (
+    <section className="section">
     <div className="w-full overflow-hidden">
       <CarouselDemo userImages={sliderImages} />
       
     </div>
+    </section>
   );
 };
 

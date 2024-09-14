@@ -37,7 +37,7 @@ const Page = () => {
   };
 
   return (
-    <section>
+    <section className="">
       <Title title={"About Us"} />
       <div className="bg-sky-50 py-4 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Carousel Section */}

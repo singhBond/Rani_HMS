@@ -9,6 +9,7 @@ import { Navbar } from "./Navbar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import NavMobile from "./NavMobile";
 
 //   import Navbar from "@/components/Navbar";
 
@@ -19,6 +20,7 @@ const Header = () => {
 
       <header className="flex top-0  flex-col md:flex-row justify-between px-4 bg-sky-700 text-slate-100 font-medium text-sm md:text-base lg:gap-6">
         <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-2 text-sm">
+          <NavMobile/>
           <span className="flex items-center ">
             {" "}
             <Clock10Icon

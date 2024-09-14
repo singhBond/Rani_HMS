@@ -52,26 +52,29 @@ function NavbarFunc({ className }: { className?: string }) {
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="APPOINTMENTS">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby"> OPD Appointment Booking</HoveredLink>
-              <HoveredLink href="/individual">
+              <HoveredLink href="#"> OPD Appointment Booking</HoveredLink>
+              <HoveredLink href="">
                 Book Telecommunication Appointment
               </HoveredLink>
-              <HoveredLink href="/individual">Video Conferencing</HoveredLink>
+              <HoveredLink href="#">Video Conferencing</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="EVENTS">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
+              <HoveredLink href="#">Conference & workshops</HoveredLink>
+              <HoveredLink href="#">Current Event</HoveredLink>
+              <HoveredLink href="#">Institute day</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="NOTICE">
+          <MenuItem setActive={setActive} active={active} item="NOTICES">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
+              <HoveredLink href="#">Notice</HoveredLink>
+              <HoveredLink href="#">Recruitment</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="ACADEMICS">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
+              <HoveredLink href="#"></HoveredLink>
             </div>
           </MenuItem>
           <Link

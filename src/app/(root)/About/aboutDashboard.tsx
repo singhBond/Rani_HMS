@@ -53,7 +53,7 @@ const page = () => {
     //       {/* <img src="/Logo/hmsLogo.png" alt="icon" className="mx-4" /> */}
     //       <span className="hidden md:block">
     //       <p className="text-slate-600 m-2">
-    //       👉We are in the 20th year of glorious excellence in child care. Our founder Hon. Dr. Rajesh took courageous decision to start a state of the art facility for children healthcare in the region. 
+    //       👉We are in the 20th year of glorious excellence in child care. Our founder Hon. Dr. Rajesh took courageous decision to start a state of the art facility for children healthcare in the region.
     //       </p>
     //       <p className="text-slate-600 m-2">
     //       👉Care of illness supported by our multi disciplinary specialty services including General Paediatrics, Neonatology, Nephrology, Neurology, Gastroenterology, Haematology, Oncology, Cardiology, Genetic and Metabolic Diseases, Paediatric Dentistry and Nutrition.
@@ -168,75 +168,92 @@ const page = () => {
     //     </div>
     //   </div>
     // </section>
-    <section className="w-full">
-  <h1 className="bg-sky-700 text-center text-2xl md:text-3xl text-white p-4">
-    Emergency No. (24x7): 7677111010
-  </h1>
-  
-  <Title title="About Us" />
-  
-  {/* Medical Services */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
-    <div className="flex justify-center items-center font-serif text-lg md:text-xl">
-      <ul className="space-y-4 text-center text-sky-700">
-        {[
-          "Ambulance Service",
-          "7677111010, 0651-2360430",
-          "Centre of Excellence in Children's Health Care",
-          "Neonatology, Paediatrics",
-          "Interstate Ambulance Services",
-          "HHFO, CPAP",
-          "All Neonatal Procedures",
-          "Screening of Newborns",
-          "All types of Paediatric Surgery"
-        ].map((item) => (
-          <li
-            key={item}
-            className="border-l-4 border-b-2 border-sky-700 shadow-lg rounded-lg bg-sky-100 p-2"
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-    
-    {/* About Section */}
-    <div className="p-6 font-serif text-base md:text-lg">
-      <h3 className="text-slate-800 text-xl md:text-2xl mb-4">
-        We are a center of excellence in children’s healthcare.
-      </h3>
-      <p className="text-slate-600 mb-2">
-        👉We are in the 20th year of glorious excellence in child care. Our founder Hon. Dr. Rajesh took a courageous decision to start a state-of-the-art facility for children's healthcare in the region.
-      </p>
-      <p className="text-slate-600 mb-2">
-        👉Care of illness supported by our multi-disciplinary specialty services including General Paediatrics, Neonatology, Nephrology, Neurology, Gastroenterology, and more.
-      </p>
-      <p className="text-slate-600 mb-4">
-        👉We are committed to exceeding expectations by providing coordinated, compassionate, and high-quality healthcare services.
-      </p>
-      <div className="flex justify-center mt-4">
-        <Button variant="hms" className="bg-sky-700 h-12 w-36">
-          <Link href="/About">More About</Link>
-        </Button>
+    <section className="section w-full">
+      <h1 className="bg-sky-700 text-center text-2xl md:text-3xl text-white p-4">
+        Emergency No. (24x7): 7677111010
+      </h1>
+
+      <Title title="About Us" />
+
+      {/* Medical Services */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+        <div className="flex justify-center items-center font-serif text-lg md:text-xl">
+          <ul className="space-y-4 text-center text-sky-700">
+            {[
+              "Ambulance Service",
+              "7677111010, 0651-2360430",
+              "Centre of Excellence in Children's Health Care",
+              "Neonatology, Paediatrics",
+              "Interstate Ambulance Services",
+              "HHFO, CPAP",
+              "All Neonatal Procedures",
+              "Screening of Newborns",
+              "All types of Paediatric Surgery",
+            ].map((item) => (
+              <li
+                key={item}
+                className="border-l-4 border-b-2 border-sky-700 shadow-lg rounded-lg bg-sky-100 p-2"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* About Section */}
+        <div className="p-6 font-serif text-base md:text-lg">
+          <h3 className="text-slate-800 text-xl md:text-2xl mb-4">
+            We are a center of excellence in children’s healthcare.
+          </h3>
+          <p className="text-slate-600 mb-2">
+            👉We are in the 20th year of glorious excellence in child care. Our
+            founder Hon. Dr. Rajesh took a courageous decision to start a
+            state-of-the-art facility for children's healthcare in the region.
+          </p>
+          <p className="text-slate-600 mb-2">
+            👉Care of illness supported by our multi-disciplinary specialty
+            services including General Paediatrics, Neonatology, Nephrology,
+            Neurology, Gastroenterology, and more.
+          </p>
+          <p className="text-slate-600 mb-4">
+            👉We are committed to exceeding expectations by providing
+            coordinated, compassionate, and high-quality healthcare services.
+          </p>
+          <div className="flex justify-center mt-4">
+            <Button variant="hms" className="bg-sky-700 h-12 w-36">
+              <Link href="/About">More About</Link>
+            </Button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-  {/* Admin Info */}
-  <Title title="Our Admins" />
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-    {["Medical Director", "Administrative Director"].map((role, index) => (
-      <div key={index} className="transition ease-in-out hover:scale-105 bg-sky-50 p-6 rounded-lg shadow-md hover:shadow-xl hover:bg-white duration-300 flex flex-col items-center">
-        <img src="" alt={role} className="w-16 h-16 rounded-full bg-white" />
-        <h1 className="text-lg font-medium mt-4">Name</h1>
-        <p className="text-sm font-extralight text-slate-800">Qualification</p>
-        <p className="text-sm font-extralight text-slate-800">'Quote'</p>
-      </div>
-    ))}
-    
-    {/* Other Cards */}
-    {/* {[
+
+      {/* Admin Info */}
+      <section className="section">
+      <Title title="Our Admins" />
+            
+      <Card className=" grid grid-cols-1 md:grid-cols-3   gap-4 p-4">
+        {["Medical Director", "Administrative Director", "Department Head"].map(
+          (role, index) => (
+            <div
+              key={index}
+              className="transition ease-in-out hover:scale-105 bg-sky-50 p-6 rounded-lg shadow-md hover:shadow-xl hover:bg-white duration-300 flex flex-col items-center"
+            >
+              <img
+                src=""
+                alt={role}
+                className="w-16 h-16 rounded-full bg-white"
+              />
+              <h1 className="text-lg font-medium mt-4">Name</h1>
+              <p className="text-sm font-extralight text-slate-800">
+                Qualification
+              </p>
+              <p className="text-sm font-extralight text-slate-800">'Quote'</p>
+            </div>
+          )
+        )}
+
+        {/* Other Cards */}
+        {/* {[
       {
         title: "Quality & Safety",
         icon: <HousePlus size={56} color="#0284c7" strokeWidth={1.5} />,
@@ -261,9 +278,9 @@ const page = () => {
         </div>
       </a>
     ))} */}
-  </div>
-</section>
-
+      </Card>
+      </section>
+    </section>
   );
 };
 
