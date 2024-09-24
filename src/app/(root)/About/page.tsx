@@ -43,7 +43,7 @@ const Page = () => {
         {/* Carousel Section */}
         <div className="relative p-4 flex justify-center items-center">
           <Carousel className="w-full max-w-md lg:max-w-lg">
-            <h1 className="bg-sky-700 text-2xl text-white font-serif text-center py-2">
+            <h1 className="bg-primary text-2xl text-white font-serif text-center py-2">
               Gallery
             </h1>
             <CarouselContent

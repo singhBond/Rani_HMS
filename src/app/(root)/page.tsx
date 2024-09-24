@@ -8,6 +8,7 @@ import AutoScrollCard from "@/components/AutoScrollCard";
 import ContactMap from "@/components/ContactMap";
 import{GalleryAuto}   from "@/app/(root)/GalleryAuto/page";
 import Tabs from "@/components/tabs";
+import OurAdmins from "@/app/(root)/OurAdmins/page";
 
 const dashboard = () => {
   return (
@@ -15,12 +16,14 @@ const dashboard = () => {
       <div className="bg-sky-50">
         <SliderDemo />
         <About />
+        <OurAdmins/>
         <Specialities />
         <Notice />
         {/* <Gallery/> */}
         <GalleryAuto/>
        <ContactMap/>
        {/* <Tabs/> */}
+       
       </div>
     </>
   );

@@ -169,7 +169,7 @@ const page = () => {
     //   </div>
     // </section>
     <section className="section w-full">
-      <h1 className="bg-sky-700 text-center text-2xl md:text-3xl text-white p-4">
+      <h1 className="bg-primary text-center text-2xl md:text-3xl text-white p-4">
         Emergency No. (24x7): 7677111010
       </h1>
 
@@ -228,7 +228,7 @@ const page = () => {
       </div>
 
       {/* Admin Info */}
-      <section className="section">
+      {/* <section className="section">
       <Title title="Our Admins" />
             
       <Card className=" grid grid-cols-1 md:grid-cols-3   gap-4 p-4">
@@ -252,34 +252,9 @@ const page = () => {
           )
         )}
 
-        {/* Other Cards */}
-        {/* {[
-      {
-        title: "Quality & Safety",
-        icon: <HousePlus size={56} color="#0284c7" strokeWidth={1.5} />,
-        description: "Our hospital utilizes state-of-the-art technology and employs a team of true experts."
-      },
-      {
-        title: "Leading Technology",
-        icon: <Computer size={56} color="#0284c7" strokeWidth={1.5} />,
-        description: "Our hospital utilizes state-of-the-art technology and employs a team of true experts."
-      },
-      {
-        title: "Experts by Experience",
-        icon: <Stethoscope size={56} color="#0284c7" strokeWidth={1.5} />,
-        description: "Our hospital employs experts with extensive experience in their fields."
-      }
-    ].map((card, index) => (
-      <a key={index} href="#" className="transition ease-in-out hover:scale-105 bg-white p-6 rounded-lg shadow-md hover:bg-sky-600 hover:text-white duration-300 flex items-center space-x-3">
-        {card.icon}
-        <div>
-          <h3 className="text-lg font-semibold">{card.title}</h3>
-          <p className="text-sm">{card.description}</p>
-        </div>
-      </a>
-    ))} */}
+       
       </Card>
-      </section>
+      </section> */}
     </section>
   );
 };

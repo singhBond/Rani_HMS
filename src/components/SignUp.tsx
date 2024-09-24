@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
 
 
 const SignUp = () => {
   return (
    
-    <div className="w-96 backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
+    <div className="w-[400px] backdrop-blur-lg bg-opacity-80 rounded-lg shadow-lg p-5 bg-gray-900 text-white">
   <h2 className="text-2xl font-bold pb-5">SignUp</h2>
   <form>
     <div className="mb-4">
@@ -44,11 +45,16 @@ const SignUp = () => {
       <p className="text-red-500 pb-5"></p>
     </div>
     <div className="flex items-center justify-between mb-4">
+    
+              
+            
       <button
         type="submit"
         className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 px-5 w-full sm:w-auto"
       >
+        <Link href="/dashboard">
         Register
+        </Link>
       </button>
       <div className="flex items-center text-sm">
         <p>Already have an account?</p>

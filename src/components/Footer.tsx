@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-sky-700 text-white text-sm py-2">
+      <div className="bg-primary text-white text-sm py-2">
         <div className="container mx-auto px-4 text-center">
           <Link href="#" className="hover:underline text-sm">Privacy Policy
            

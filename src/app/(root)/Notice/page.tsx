@@ -177,6 +177,7 @@ const page = () => {
     </Card>
 
   </div>
+  
 </section>
 
   );

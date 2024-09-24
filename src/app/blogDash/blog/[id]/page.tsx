@@ -25,7 +25,8 @@ import blogData from "@/json/BlogData"; // Assuming this is a JSON file with blo
 import { useParams } from "next/navigation";
 import Marquee from "react-fast-marquee";
 import { Button } from "@/components/ui/button";
-// import { TextareaForm } from "@/components/TextareaForm";
+import { QueryForm } from "@/components/QueryForms";
+
 
 type BlogPost = {
   id: number;
@@ -61,6 +62,7 @@ const BlogContent: React.FC = () => {
   }
 
   return (
+        <section className="section">
     <div className="mt-8 ">
       {/* Single Blog Page */}
       {/* <TracingBeam className="px-2"> */}
@@ -116,8 +118,8 @@ const BlogContent: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="shadow-inner  h-64 w-80 my-10 p-4 rounded-lg ">
-                  {/* <TextareaForm /> */}
+                <div className="shadow-inner shadow-sky-500 bg-sky-50  h-56 w-80 my-10 p-4 rounded-lg ">
+                  <QueryForm />
                 </div>
               </div>
             </div>
@@ -132,11 +134,11 @@ const BlogContent: React.FC = () => {
           <CarouselContent className="flex">
             {blogData.map((blog) => (
               <CarouselItem key={blog.id} className="md:basis-1/3 lg:basis-1/3">
-                <Card className=" sm:min-h-96 sm:max-w-xs grid grid-flow-row justify-center transition duration-500 transform hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:border-b-8 hover:opacity-80 hover:border-b-rose-200">
+                <Card className=" sm:min-h-96 sm:max-w-80  grid grid-flow-row justify-center...transition duration-500 transform hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  border-none shadow-none hover:shadow-2xl hover:shadow-slate-500 ">
                   <img
                     src={blog.featureImage}
                     alt={blog.title}
-                    className="rounded-t-lg"
+                    className="rounded-lg"
                   />
                   <Toggle className="bg-sky-600 max-w-32 text-white place-self-end -mt-10 rounded-b-none rounded-r-none">
                     {blog.date}
@@ -160,7 +162,7 @@ const BlogContent: React.FC = () => {
                         </Link>
                       </div>
                       <Link href={`/blogDash/blog/${blog.id}`}>
-                        <Button>Read More</Button>
+                        <Button variant={"hms"}>Read More</Button>
                       </Link>
                     </div>
                   </div>
@@ -173,6 +175,7 @@ const BlogContent: React.FC = () => {
         </Carousel>
       </div>
     </div>
+    </section>
   );
 };
 

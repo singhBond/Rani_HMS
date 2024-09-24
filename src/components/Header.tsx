@@ -18,46 +18,58 @@ const Header = () => {
     <section>
       {/* Nav Menu Centered on Large Screens */}
 
-      <header className="flex top-0  flex-col md:flex-row justify-between px-4 bg-sky-700 text-slate-100 font-medium text-sm md:text-base lg:gap-6">
-        <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-2 text-sm">
-          <NavMobile/>
-          <span className="flex items-center ">
+      <header className="">
+        <div className="flex top-0  flex-col md:flex-row justify-between px-4 bg-primary text-slate-100 font-medium text-sm md:text-base lg:gap-6">
+          {/* <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-2 text-sm"> */}
+          {/* <NavMobile /> */}
+          <span className="flex items-center gap-6  ">
             {" "}
-            <Clock10Icon
-              color="#0e61cd"
-              strokeWidth={1}
-              className="mr-2 "
-            />{" "}
-            Mon - Fri: 9:30 AM to 6:30 PM
+            <p>+91-7677111010</p>
+            <p>Email:info@ranihospital.com</p>
+          </span>
+          {/* </div> */}
+          {/* Contact & Social Info */}
+          <span className="flex items-center md:justify-end gap-4 mt-4 md:mt-0 mr-4">
+            <Link href="/" aria-label="Facebook">
+              <BsTwitter
+                strokeWidth={1.5}
+                className="text-muted-foreground transition-colors text-sky-400 hover:text-sky-300  "
+              />
+            </Link>
+            <Link href="/" aria-label="Twitter">
+              <FaInstagram
+                strokeWidth={1.5}
+                className="text-muted-foreground transition-colors text-rose-600 hover:text-sky-300"
+              />
+            </Link>
+            <Link href="/" aria-label="Instagram">
+              <FaYoutube
+                strokeWidth={1.5}
+                className="text-muted-foreground transition-colors text-red-500 hover:text-sky-300"
+              />
+            </Link>
+            <Link href="/" aria-label="YouTube">
+              <FaFacebookF
+                strokeWidth={1.5}
+                className="text-muted-foreground transition-colors text-white hover:text-sky-300"
+              />
+            </Link>
           </span>
         </div>
-        {/* Contact & Social Info */}
-        <span className="flex items-center md:justify-end gap-4 mt-4 md:mt-0 mr-4">
-          <Link href="/" aria-label="Facebook">
-            <BsTwitter
-              strokeWidth={1.5}
-              className="text-muted-foreground transition-colors text-sky-400 hover:text-sky-300  "
-            />
-          </Link>
-          <Link href="/" aria-label="Twitter">
-            <FaInstagram
-              strokeWidth={1.5}
-              className="text-muted-foreground transition-colors text-rose-600 hover:text-sky-300"
-            />
-          </Link>
-          <Link href="/" aria-label="Instagram">
-            <FaYoutube
-              strokeWidth={1.5}
-              className="text-muted-foreground transition-colors text-red-500 hover:text-sky-300"
-            />
-          </Link>
-          <Link href="/" aria-label="YouTube">
-            <FaFacebookF
-              strokeWidth={1.5}
-              className="text-muted-foreground transition-colors text-white hover:text-sky-300"
-            />
-          </Link>
-        </span>
+        <div className="flex justify-end bg-gradient-to-l from-teal-500 to-transparent ">
+          {/* <span className="  rounded-r-lg "></span> */}
+          <span className=" flex gap-4 px-4 text-white ">
+            <Link className="hover:underline " href={""}>Find a Doctor</Link>
+            <Link className="hover:underline " href={""}>Blogs</Link>
+            <Link className="hover:underline " href={""}>My Reports</Link>
+            <Link className="hover:underline " href={""}>Investors</Link>
+            <Link className="hover:underline " href={""}>Research</Link>
+            <Link className="hover:underline " href={""}>CSR</Link>
+            <Link className="hover:underline " href={""}>Contact</Link>
+            <Link className="hover:underline " href={""}>No.</Link>
+            <Link className="hover:underline " href={""}>No. 2</Link>
+          </span>
+        </div>
       </header>
 
       <div className=" bg-building bg-cover bg-bottom relative w-full  h-44 sm:h-48 mx-auto p-4 shadow-lg border border-black border-opacity-20">
@@ -66,7 +78,7 @@ const Header = () => {
 
         <div className=" relative z-10 flex flex-col md:flex-row justify-evenly items-center  md:space-y-0">
           {/* logo */}
-          {/* logo */}
+
           <div className="flex justify-center md:justify-start">
             <img
               src="/Logo/hmsLogo.png"
@@ -96,10 +108,10 @@ const Header = () => {
 
           {/* Information */}
           <div className="flex flex-col  items-center md:items-end space-y-2 text-slate-800 font-medium">
-            <a href="#" className="hover:border-b-2 hover:text-sky-700 ">
+            <a href="/Appointments/BookAppointment" className="hover:border-b-2 hover:text-sky-700 ">
               OPD Appointment
             </a>
-            <a href="#" className="hover:border-b-2 hover:text-sky-700 ">
+            <a href="/RaniLiveDashboard" className="hover:border-b-2 hover:text-sky-700 ">
               Rani Dashboard
             </a>
           </div>
