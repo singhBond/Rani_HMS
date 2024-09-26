@@ -79,5 +79,6 @@ html {
 .section {
   padding : 2%;
   border: 2rem;
- 
+ padding-left: 4%;
+ padding-right: 4%;
 }

@@ -75,30 +75,10 @@ function NavbarFunc({ className }: { className?: string }) {
         </MenuItem>
 
         <Link
-          href="/Academics"
+          href="/AcademicsSection"
           className="text-white text-sm hover:text-slate-200"
         >
           ACADEMICS
-        </Link>
-        <Link
-          href="/ContactUs"
-          className="text-white text-sm hover:text-slate-200"
-        >
-          CONTACT US
-        </Link>
-
-        <Link
-          href="/Career"
-          className="text-white text-sm hover:text-slate-200"
-        >
-          CAREER
-        </Link>
-
-        <Link
-          href="/blogDash/blog"
-          className="text-white text-sm hover:text-slate-200"
-        >
-          BLOG
         </Link>
 
         <div className="grid relative w-48 bottom-2 max-w-sm h-0 ">

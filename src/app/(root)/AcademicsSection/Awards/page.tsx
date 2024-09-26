@@ -6,49 +6,49 @@ import React, { useState } from 'react';
 const images = [
   {
     id: 1,
-    src: '/events.png',
-    alt: 'Image 1 ',
+    src: '/path/to/image1.jpg',
+    alt: 'Image ',
   },
   {
     id: 2,
     src: '/path/to/image2.jpg',
-    alt: 'Image 2 ',
+    alt: 'Image ',
   },
   {
     id: 3,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
   {
     id: 4,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
   {
     id: 5,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
   {
     id: 6,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
   {
     id: 7,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
   {
     id: 8,
     src: '/path/to/image3.jpg',
-    alt: 'Image 3 ',
+    alt: 'Image ',
   },
 
   // Add more images as needed
 ];
 
-const GalleryPage: React.FC = () => {
+const page: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openImageModal = (imageSrc: string) => {
@@ -63,8 +63,10 @@ const GalleryPage: React.FC = () => {
     <section className="section p-6">
       {/* Page Title */}
       <div className="text-center mb-8">
-       <Title title={"Institute Day Events"}/>
-        <p className="text-gray-600 mt-2">Browse our collection of images</p>
+      <h1 className="grid text-center text-xl text-sky-700  border-b-4 rounded-b-md border-sky-200">
+        Awards
+      </h1>
+        
       </div>
 
       {/* Image Gallery Grid */}
@@ -106,4 +108,4 @@ const GalleryPage: React.FC = () => {
   );
 };
 
-export default GalleryPage;
+export default page;

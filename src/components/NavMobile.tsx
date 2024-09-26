@@ -13,24 +13,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
 
 export interface SubLink {
   title: string;
@@ -49,53 +31,50 @@ export const navigationLinks: NavLink[] = [
     href: "/",
   },
   {
-    title: " ABOUT",
+    title: " ABOUT US",
     href: "/About",
-    
   },
   {
-    title: "DEPARTMENTS",
-    href: "/services",
+    title: "DEPARTMENT",
+    href: "#",
     submenu: [
-      { title:"Speciality Centre", href: "#" },
-      { title: "Departments", href: "#" },
-      { title: "Superspeciality", href: "#" },
-      
+      { title: "Speciality Centre", href: "/Department/speciality" },
+      { title: "Departments", href: "Department/departments" },
+      { title: "Superspeciality", href: "Department/superspeciality" },
     ],
   },
   {
     title: "APPOINTMENTS",
     href: "#",
     submenu: [
-      { title:"Our Speciality", href: "/speciality/ourSpeciality" },
-      { title: "Key Performance", href: "/speciality/keyPerformance" },
-      
+      { title: "Book Appointment", href: "/Appointments/BookAppointment" },
+      {
+        title: "Book Telecommunication Appointment",
+        href: "/Appointments/BookTelecommunicationAppointments",
+      },
+      { title: "Video Conferencing", href: "/Appointments/VideoConferencing" },
     ],
   },
   {
-    title: "DEPARTMENTS",
+    title: "EVENTS",
     href: "#",
     submenu: [
-      { title:"OPD Schedule", href: "/opd" },
-      { title: "Department Detail", href: "/departmentDetail" },
-      
+      { title: "Conference Workshops", href: "/Events/ConferenceWorkshops" },
+      { title: "Current Event", href: "/Events/CurrentEvent" },
+      { title: "Institute Day", href: "/Events/InstituteDay" },
     ],
   },
   {
-    title: "COURSES",
+    title: "NOTICES",
     href: "#",
+    submenu: [
+      { title: "Notice", href: "/Notices/Notice" },
+      { title: "Recruitments", href: "/Notices/Recruitments" },
+    ],
   },
   {
-    title: "CAREER",
-    href: "/career/currentOpenings",
-  },
-  {
-    title: "BLOG",
-    href: "/blogDash/blog",
-  },
-  {
-    title: "CONTACT",
-    href: "/contact",
+    title: "ACADEMICS",
+    href: "/Academics/Introduction",
   },
 ];
 
@@ -117,12 +96,12 @@ const NavMobile: React.FC = () => {
     <>
       {/* Mobile Navigation Container */}
       <div className="flex flex-col md:hidden">
-        <header className="flex h-14 items-center justify-between gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center justify-between gap-4  px-4 lg:h-[60px] lg:px-6">
           {/* Sheet for Mobile Menu */}
-          <Sheet>
+          <Sheet >
             <SheetTrigger asChild>
               <Button
-                variant="outline"
+                variant={"hms"}
                 size="icon"
                 className="shrink-0 md:hidden"
               >
@@ -131,13 +110,13 @@ const NavMobile: React.FC = () => {
               </Button>
             </SheetTrigger>
 
-            <SheetContent side="left" className="flex flex-col w-1/2">
+            <SheetContent side="left" className="flex flex-col w-1/2 bg-sky-100 ">
               <div className="grid gap-4 text-base font-medium text-muted-foreground">
                 <Link
                   href="/"
                   className="flex items-center gap-2 text-lg font-bold text-foreground"
                 >
-                  <Hospital  className="w-5 h-5  " />
+                  <Hospital className="w-5 h-5" />
                   <span className="sr-only">Acme Inc</span>
                 </Link>
 
@@ -196,38 +175,6 @@ const NavMobile: React.FC = () => {
               </div>
             </SheetContent>
           </Sheet>
-          <div >
-          <Dialog>
-            <DialogTrigger asChild className="">
-              <Button variant="hms" className="transition ease-in-out delay-100 hover:translate-4 hover:scale-110 duration-400 group block" >Appointment</Button>
-            </DialogTrigger>
-            <DialogContent className=" bg-slate-100  ">
-              <DialogHeader>
-                <DialogTitle></DialogTitle>
-                <DialogDescription></DialogDescription>
-              </DialogHeader>
-
-              
-            </DialogContent>
-          </Dialog>
-        </div>
-          {/* User Account Dropdown */}
-          {/* <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu> */}
         </header>
       </div>
     </>

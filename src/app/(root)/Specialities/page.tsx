@@ -40,7 +40,7 @@ const page = () => {
     //     </div>
     //   </div>
     // </section>
-    <section className="p-4">
+    <section className="p-4 md:block hidden">
       {/* Title */}
       <Title title="Specialities" />
 

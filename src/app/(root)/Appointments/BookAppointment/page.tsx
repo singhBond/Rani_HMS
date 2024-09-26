@@ -23,6 +23,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { format } from "date-fns";
+import App from "@/components/CrudApp";
+import CrudApp from "@/components/CrudApp";
 
 // Department, Doctor, and Slot Data
 const departmentsData = {
@@ -270,22 +272,6 @@ const PatientDetailsForm: React.FC<PatientDetailsFormProps> = ({
 
   return (
     <section>
-      {/* <div className="grid grid-flow-col md:grid-flow-col justify-center gap-x-10 items-center shadow-md shadow-slate-400 p-2 md:p-4">
-        <img
-          src="hospital/hospitallogo.png"
-          alt="Hospital Logo"
-          className="w-32 h-32 md:mb-0"
-        />
-        <div className="grid text-center sm:text-left md:text-left">
-          <h1 className="font-bold text-xl md:text-2xl">
-            Shree Jagannath Hospital & Research Center
-          </h1>
-          <p>sjhrc.ranchi@gmail.com</p>
-          <a href="https://sjhrc.in">https://sjhrc.in</a>
-          <p>+91 8987999200</p>
-        </div>
-      </div> */}
-
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg mt-2 p-6 ">
         <ScrollArea>
           <form onSubmit={handleSubmit} className="h-[400px] p-4">
@@ -387,6 +373,10 @@ const PatientDetailsForm: React.FC<PatientDetailsFormProps> = ({
             </div>
           </form>
         </ScrollArea>
+      </div>
+
+      <div>
+        {/* <CrudApp /> */}
       </div>
     </section>
   );

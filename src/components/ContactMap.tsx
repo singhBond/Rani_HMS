@@ -22,7 +22,7 @@ const ContactMap = () => {
       <Title title="Contact Us" />
 
       {/* Contact Info Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center  my-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4     my-2">
         {/* Telephone Card */}
         <Card className="bg-white w-full sm:min-h-28 sm:min-w-32 grid grid-flow-col justify-center rounded-none shadow-none transition duration-500 transform hover:-translate-y-2 border-none   hover:bg-white">
           <Smartphone
@@ -52,20 +52,20 @@ const ContactMap = () => {
           />
           <div className="grid items-center p-2">
             <span className="flex gap-4">
-              <a href="https://www.facebook.com/sjhrc.in" aria-label="Facebook">
+              <a href="/" aria-label="Facebook">
                 <BsTwitter className="text-muted-foreground size-8 hover:text-sky-400" />
               </a>
-              <a href="https://x.com/Sjhrcranchi" aria-label="Twitter">
+              <a href="/" aria-label="Twitter">
                 <FaInstagram className="text-muted-foreground size-8 hover:text-rose-600" />
               </a>
               <a
-                href="https://www.instagram.com/shreejagannathhospital/"
+                href="/"
                 aria-label="Instagram"
               >
                 <FaFacebookF className="text-muted-foreground size-8 hover:text-blue-700" />
               </a>
               <a
-                href="https://www.youtube.com/@sjhrcjagannath9636"
+                href="/"
                 aria-label="YouTube"
               >
                 <FaYoutube className="text-muted-foreground size-8 hover:text-red-500" />
@@ -91,40 +91,8 @@ const ContactMap = () => {
       </div>
 
       {/* Contact Form and Map Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 lg:p-8">
-        {/* Contact Form */}
-        <div className="shadow-inner shadow-sky-700 rounded-md bg-sky-100 p-4 w-full max-w-md mx-auto">
-          <h1 className="text-2xl text-sky-700 py-4 font-medium">
-            Leave Us Message
-          </h1>
-
-          <div className="grid gap-4">
-            <Input
-              type="text"
-              placeholder="Your Name"
-              className="bg-white rounded-sm h-12 text-lg px-4 w-full"
-            />
-            <Input
-              type="text"
-              placeholder="Your Phone"
-              className="bg-white rounded-sm h-12 text-lg px-4 w-full"
-            />
-            <Input
-              type="email"
-              placeholder="Email Address"
-              className="bg-white rounded-sm h-12 text-lg px-4 w-full"
-            />
-          </div>
-
-          <Textarea
-            placeholder="Type your message here."
-            className="bg-white text-lg shadow-sm rounded-sm mt-4 w-full h-32 px-4"
-          />
-          <Button type="submit" className="mt-4 w-full lg:w-auto">
-            Send
-          </Button>
-        </div>
-
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 p-4 lg:p-8">
+        
         {/* Map */}
         <div className="w-full">
           <iframe

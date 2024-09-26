@@ -22,9 +22,9 @@ const Slider = () => {
   };
   return (
     <section className="section">
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden   ">
       <CarouselDemo userImages={sliderImages} />
-      
+     
     </div>
     </section>
   );

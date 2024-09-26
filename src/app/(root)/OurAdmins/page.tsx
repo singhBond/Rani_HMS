@@ -73,7 +73,7 @@ const page = () => {
   return (
     <section className='section '>
         {/* <Title title={"Our Admins"}/> */}
-      <div className='container mx-auto px-4 py-6  flex flex-col items-center  lg:flex-row lg:justify-between'>
+      <div className='container mx-auto px-8 py-6   flex flex-col items-center  lg:flex-row lg:justify-between'>
         {/* Experts Info */}
         <div className='bg-primary text-white p-6 rounded-md mb-6 lg:mb-0 lg:w-1/3'>
           <h1 className='text-2xl font-bold mb-4'>Our Medical Experts</h1>
@@ -85,7 +85,7 @@ const page = () => {
         </div>
 
         {/* Doctors List */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:w-2/3'>
+        <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:w-2/3'>
           {AdminsData.map((doctor) => (
             <Card key={doctor.id} className='shadow-md rounded w-40 h-56 mx-auto'>
               <img src={doctor.image} alt={doctor.name} className='object-cover h-32 w-full rounded-t-md' />

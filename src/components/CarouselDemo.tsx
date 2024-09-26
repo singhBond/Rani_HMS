@@ -108,7 +108,7 @@ export function CarouselDemo({ userImages = [] }: CarouselDemoProps) {
                   <img
                     src={image.url}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
+                    className="w-full h-[300px] sm:h-[300px] md:h-[300px] lg:h-[400px] object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
                   />
                 </CardContent>
               </Card>
