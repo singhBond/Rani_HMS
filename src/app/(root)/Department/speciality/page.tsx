@@ -58,12 +58,12 @@ const page = () => {
               <div className="flex w-full">
                 {/* Tabs List - 20% Width */}
                 <div className="w-[20%] border-r border-sky-500 pr-4">
-                  <TabsList className="flex flex-col space-y-2">
+                  <TabsList className="flex flex-col space-y-2 mr-48">
                     {AboutSpeciality.map((about) => (
                       <TabsTrigger
                         key={about.id}
                         value={about.id}
-                        className="w-full text-left py-2 border-b  border-transparent hover:border-sky-500 focus:border-sky-500"
+                        className="w-32 text-left py-2 border-b  border-transparent hover:border-sky-500 focus:border-sky-500"
                       >
                         {about.title}
                       </TabsTrigger>
@@ -72,7 +72,7 @@ const page = () => {
                 </div>
 
                 {/* Tabs Content - 80% Width */}
-                <div className="w-[80%] pl-4">
+                <div className="w-[80%] pl-6">
                   {AboutSpeciality.map((about) => (
                     <TabsContent key={about.id} value={about.id}>
                       <strong className="grid text-center text-xl text-sky-700 border-b-4 rounded-b-md border-sky-200">{about.title}</strong>

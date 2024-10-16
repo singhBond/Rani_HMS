@@ -11,19 +11,22 @@ import { GalleryAuto } from "@/app/(root)/GalleryAuto/page";
 import OurAdmins from "@/app/(root)/OurAdmins/page";
 import OurServices from "@/app/(root)/OurServices/page";
 
+
+
 const dashboard = () => {
   return (
     <>
       <div className="bg-sky-50">
-        <SliderDemo />
-        <About />
-        {/* <OurServices /> */}
+        <SliderDemo/>
+        <About/>
+        {/* <OurServices />  */}
         <OurAdmins />
         <Specialities />
         <Notice />
         {/* <Gallery/> */}
         <GalleryAuto />
         <ContactMap />
+    
       </div>
     </>
   );

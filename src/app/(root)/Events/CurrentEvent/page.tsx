@@ -16,7 +16,7 @@ const CurrentEvent =[
     id:1,
     title:"title",
     date:"01/08/24",
-    link:"",
+    link:"https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
 }
 ];
 

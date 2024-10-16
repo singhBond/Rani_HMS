@@ -14,10 +14,29 @@ const Services = [
   { id: 7, name: "Paediatrics Intensive Care", icon: <Stethoscope /> },
   { id: 8, name: "Laboratory Medicine", icon: <Stethoscope /> },
   { id: 9, name: "NeuroScience", icon: <Stethoscope /> },
-  { id: 10, name: "Anaesthesiology", icon: <Stethoscope /> },
+  { id: 10, name: "Anesthsiology", icon: <Stethoscope /> },
   { id: 11, name: "Pharmacy", icon: <Stethoscope /> },
   { id: 12, name: "Emergency", icon: <Stethoscope /> },
 ];
+
+const styles = {
+  container: {
+    padding: '20px',
+    // backgroundColor: '#f4f4f4',
+    textAlign: 'center',
+  },
+  heading: {
+    fontSize: '2.5em',
+    marginBottom:'16px',
+    color: '#333',
+  },
+  paragraph: {
+    fontSize:'1.2em',
+    color: '#666',
+    lineHeight: '1.6',
+    marginBottom: '20px',
+  },
+};
 
 const page = () => {
   return (
@@ -27,37 +46,33 @@ const page = () => {
         Emergency No. (24x7): 7677111010
       </h1>
 
+    
       {/* About Us Section */}
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-2 p-8 mx-8 justify-items-center">
-        <div className="lg:max-w-lg shadow-inner shadow-sky-700 bg-sky-100 rounded-l-3xl border-l-8 border-sky-700 p-4  ">
-        <Title title="About Us" />
-          <p className="text-sm md:text-base lg:text-lg font-serif leading-relaxed ">
-            Rani Hospital has grown overtime by extending child healthcare
-            specialization in a medically underdeveloped state like Jharkhand.
-            Excellence in the healthcare services has made us a reputation of
-            Regional Tertiary Health Centre for newborn and children in the
-            region. We have a very large share of patients from nearby states.
-            Rani Hospital is a 225 bedded super speciality children hospital
-            situated in the capital of Jharkhand. We have the honour of being
-            the largest treatment facility for sick children in private sector
-            in India. We are in the 18th year of glorious excellence in child
-            care. Our founder Hon. Dr. Rajesh took courageous decision to start
-            a state of the art facility for children healthcare in the region.
-            Rani hospital has come a long way in tertiary child care not only in
-            the state of Jharkhand but in the whole eastern part of the country.
-           
-          </p>
-        </div>
+       
+        <div style={styles.container}>
+      <h2 style={styles.heading}>About Us</h2>
+      <p style={styles.paragraph}>
+        Welcome to our website! We are a dedicated team passionate about delivering the best service and products to our customers. 
+        Our mission is to provide innovative solutions and exceptional customer experiences. 
+        Thank you for being a part of our journey!
+      </p>
+      <p style={styles.paragraph}>
+        Our values include integrity, excellence, and commitment to continuous improvement. We strive to maintain high standards 
+        and work towards making a positive impact in our community and industry.
+      </p>
+    </div>
+
 
         {/* Tabs Section */}
         <div className="grid justify-self-center">
           <Tabs defaultValue="specialities" className="w-3/4  ">
-            <TabsList className="flex bg-transparent space-x-2">
-              <TabsTrigger className="underline" value="specialities">
+            <TabsList className="flex bg-transparent space-x-2 ">
+              <TabsTrigger className=" bg-primary text-white" value="specialities">
                 Specialities
               </TabsTrigger>
-              <TabsTrigger className="underline" value="services">
+              <TabsTrigger className=" bg-primary text-white" value="services">
                 Services
               </TabsTrigger>
             </TabsList>

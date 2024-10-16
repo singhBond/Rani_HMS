@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@/components/ui/card"; // Assuming you're using a Card component from your UI library.
+import { Card,  } from "@/components/ui/card"; // Assuming you're using a Card component from your UI library.
 import Title from "@/components/Title"; // Assuming you're using a Title component.
 import {
   FaBed,
@@ -100,7 +100,7 @@ const DashboardPage: React.FC = () => {
             key={index}
             className="p-4 shadow-md shadow-primary rounded-lg flex flex-col items-center"
           >
-            <span className="flex place-self-start font-sans text-xs"> <Radio color="#d41616" size={16} />LIVE</span>
+            <span className="flex place-self-start font-sans text-xs"> <Radio color="#d41616" size={16} />TODAY's STATUS</span>
             <div className="grid justify-items-center space-y-2">
               {card.icon}
               <h3 className="text-lg font-medium text-gray-700">
@@ -113,7 +113,7 @@ const DashboardPage: React.FC = () => {
 
             <div className="flex place-self-end text-sm ">
               <ClockArrowUp className="size-4" />
-              an hour ago
+              12 hours ago
             </div>
           </Card>
         ))}

@@ -70,7 +70,7 @@ const BlogPage = () => {
             {blogData.map((blog) => (
               <Card
                 key={blog.id}
-                className=" sm:min-h-96 sm:max-w-80  grid grid-flow-row justify-center...transition duration-500 transform hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  border-none shadow-none hover:shadow-2xl hover:shadow-slate-500 "
+                className=" sm:min-h-96 sm:max-w-80  grid grid-flow-row justify-center...transition duration-500 transform hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:bg-sky-50  border-none shadow-none hover:shadow-2xl hover:shadow-slate-500 "
               >
                 <img
                   src={blog.featureImage}
@@ -80,7 +80,7 @@ const BlogPage = () => {
                 <Toggle className="bg-sky-600 max-w-32 text-white place-self-end -mt-10 rounded-b-none rounded-r-none ">
                   {blog.date}
                 </Toggle>
-                <div className="grid grid-flow-row p-6 gap-y-4 ">
+                <div className="grid grid-flow-row p-6 gap-y-4">
                   <h1 className="text-lg font-semibold">{blog.title}</h1>
                   <p className="text-xs font-extralight pb-4 border-b-2">
                     {blog.minidescription}

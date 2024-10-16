@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "be2d",
+      "name": "anjan",
+      "gender": "Female",
+      "dob": "2024-10-30T18:30:00.000Z",
+      "phone": 8794561235,
+      "email": "anj@n.com",
+      "state": "asfaf",
+      "city": "adaf",
+      "address": "afaa",
+      "pincode": 879456
+    },
+    {
+      "id": "5b7b",
+      "name": "aaf",
+      "gender": "Female",
+      "dob": "2024-10-29T18:30:00.000Z",
+      "phone": 8974561236,
+      "email": "a@m.com",
+      "state": "sdhfkjafh",
+      "city": "fhfkajfal",
+      "address": "fajafjaof",
+      "pincode": 654987
+    }
+  ],
+  "appointments": []
+}

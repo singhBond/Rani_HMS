@@ -11,7 +11,7 @@ const Workshop =[
     id:1,
     title:"title1",
     date:"12/08/24",
-    link:"Link1",
+    link:"https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
 },
 ];
 const page = () => {

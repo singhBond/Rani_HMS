@@ -6,8 +6,6 @@ import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { Navbar } from "./Navbar";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import NavMobile from "./NavMobile";
 
@@ -130,10 +128,10 @@ const Header = () => {
               OPD Appointment
             </Link>
             <Link
-              href="/RaniLiveDashboard"
+              href="/E_HospitalDashboard"
               className="hover:border-b-2 hover:text-sky-700 "
             >
-              Rani Dashboard
+              E-Hospital Dashboard
             </Link>
           </div>
         </div>

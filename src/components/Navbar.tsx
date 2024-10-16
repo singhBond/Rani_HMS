@@ -56,6 +56,9 @@ function NavbarFunc({ className }: { className?: string }) {
             <HoveredLink href="/Appointments/VideoConferencing">
               Video Conferencing
             </HoveredLink>
+            <HoveredLink href="/Appointments/BookingList">
+              Booked List
+            </HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="EVENTS">
